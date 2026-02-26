@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@keyframes flow {
+    0% {
+        top: -10px;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+.animate-flow {
+    animation: flow 1.2s linear infinite;
+}
