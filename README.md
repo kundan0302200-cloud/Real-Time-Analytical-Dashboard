@@ -25,7 +25,7 @@ A modern React-based dashboard simulating real-time analytics systems used in AP
 
 ---
 
-## 🎯 Why This Project Stands Out (For Recruiters)
+## 🎯 Why This Project Stands Out 
 
 * Demonstrates **real-time UI architecture** without backend dependency
 * Shows **advanced React patterns (hooks + reducer + context)**
