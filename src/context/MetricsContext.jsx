@@ -5,7 +5,7 @@ import {
   useEffect,
   useMemo,
 } from "react";
-import generateMetrics from "../services/metricsSimulator";
+import { fetchMetrics } from "../services/metricsSimulator";
 
 const MetricsContext = createContext();
 
@@ -51,49 +51,49 @@ export function MetricsProvider({ children }) {
   useEffect(() => {
     if (!state.autoRefresh) return;
 
-    const timer = setInterval(() => {
+    const fetchData = async () => {
       try {
-        dispatch({
-          type: "SET_METRICS",
-          payload: generateMetrics(),
-        });
-      } catch (err) {
-        dispatch({ type: "SET_ERROR", payload: err.message });
+        dispatch({ type: "SET_LOADING", payload: true });
+
+        const data = await fetchMetrics();
+
+        dispatch({ type: "SET_METRICS", payload: data });
+
+      } catch (error) {
+        dispatch({ type: "SET_ERROR", payload: error.message });
+      } finally {
+        dispatch({ type: "SET_LOADING", payload: false });
       }
-    }, state.interval);
+    };
+
+    fetchData();
+
+    const timer = setInterval(fetchData, state.interval);
 
     return () => clearInterval(timer);
+
   }, [state.autoRefresh, state.interval]);
 
-  useEffect(() => {
-    dispatch({ type: "SET_METRICS", payload: generateMetrics() });
-  }, []);
+  const manualRefresh = async () => {
+    try {
+      dispatch({ type: "SET_LOADING", payload: true });
 
-  const manualRefresh = () => {
-    dispatch({ type: "SET_LOADING", payload: true });
+      const data = await fetchMetrics();
 
-    setTimeout(() => {
-      try {
-        dispatch({
-          type: "SET_METRICS",
-          payload: generateMetrics(),
-        });
-      } catch (err) {
-        dispatch({ type: "SET_ERROR", payload: err.message });
-      }
+      dispatch({ type: "SET_METRICS", payload: data });
 
+    } catch (error) {
+      dispatch({ type: "SET_ERROR", payload: error.message });
+    } finally {
       dispatch({ type: "SET_LOADING", payload: false });
-    }, 800);
+    }
   };
 
-  const value = useMemo(
-    () => ({
-      ...state,
-      dispatch,
-      manualRefresh,
-    }),
-    [state]
-  );
+  const value = useMemo(() => ({
+    ...state,
+    dispatch,
+    manualRefresh,
+  }), [state]);
 
   return (
     <MetricsContext.Provider value={value}>
@@ -102,7 +102,7 @@ export function MetricsProvider({ children }) {
   );
 }
 
+
 export function useMetrics() {
   return useContext(MetricsContext);
 }
-
