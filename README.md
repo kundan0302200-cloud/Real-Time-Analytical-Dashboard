@@ -1,16 +1,94 @@
-# React + Vite
+# 📊 Real-Time Analytics Dashboard Simulator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Banner](https://capsule-render.vercel.app/api?type=waving\&color=0:0ea5e9,100:6366f1\&height=220\&section=header\&text=Real-Time%20Analytics%20Dashboard\&fontSize=32\&fontColor=ffffff\&animation=fadeIn\&fontAlignY=35)
 
-Currently, two official plugins are available:
+<p align="center">
+  <img src="https://img.shields.io/badge/React-18-blue?logo=react" />
+  <img src="https://img.shields.io/badge/TailwindCSS-3-38bdf8?logo=tailwindcss" />
+  <img src="https://img.shields.io/badge/Recharts-Visualization-orange" />
+  <img src="https://img.shields.io/badge/State-Context%20API%20%2B%20useReducer-green" />
+  <img src="https://img.shields.io/badge/Build-Vite-purple?logo=vite" />
+  <img src="https://img.shields.io/badge/Status-Live-success" />
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔗 [https://real-time-analytical-dashboard.netlify.app/](https://real-time-analytical-dashboard.netlify.app/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📌 Overview
+
+A modern React-based dashboard simulating real-time analytics systems used in APM, server monitoring, and cloud tracking.
+
+---
+
+## 🎯 Why This Project Stands Out (For Recruiters)
+
+* Demonstrates **real-time UI architecture** without backend dependency
+* Shows **advanced React patterns (hooks + reducer + context)**
+* Implements **performance optimization techniques**
+* Follows **scalable and maintainable folder structure**
+* Simulates **production-like monitoring systems**
+
+---
+
+## ✨ Features
+
+* 🔄 Real-time data simulation
+* 📊 Interactive charts (Recharts)
+* ⚡ Optimized rendering (memoization)
+* 📡 Live event feed
+* 🧭 Multi-page routing
+* 🎨 Responsive UI
+
+---
+
+## 🧠 Tech Highlights
+
+* ⚛️ React (Hooks + Functional Components)
+* 🧠 Context API + useReducer
+* ⚡ Performance optimization (React.memo, useMemo)
+* 🎨 Tailwind CSS
+* 📊 Recharts
+
+---
+
+## 📁 Structure
+
+```
+src/
+├── component/
+├── context/
+├── pages/
+├── services/
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## 🧪 Future Improvements
+
+* WebSocket real-time integration
+* Authentication system
+* Dark mode
+* Backend API connection
+
+---
+
+## 👨‍💻 Author
+
+Kundan Kumar
+
+---
+
+## 📜 License
+
+Educational use only
+
+
+
+
